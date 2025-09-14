@@ -1,0 +1,8 @@
+# python缓存
+__pycache__/
+
+# flask相关
+instance/
+
+# 其他
+other/
