@@ -1,8 +1,12 @@
 # python缓存
 __pycache__/
+*.pyc
 
 # flask相关
 instance/
+
+# json数据包
+*.json
 
 # 其他
 other/

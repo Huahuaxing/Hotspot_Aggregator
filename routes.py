@@ -3,6 +3,8 @@ from flask_login import login_user, login_required, logout_user
 from werkzeug.security import generate_password_hash, check_password_hash
 from models import db, User, Topic
 
+from spider.zhihu_spider import fetch_zhihu_hot
+
 
 # 定义蓝图
 main_bp = Blueprint("main", __name__)
@@ -11,8 +13,9 @@ main_bp = Blueprint("main", __name__)
 @main_bp.route("/")
 @login_required
 def index():
-    topics = Topic.query.order_by(Topic.fetched_at.desc()).all()
-    return render_template("index.html", topics=topics)
+    # topics = Topic.query.order_by(Topic.fetched_at.desc()).all()
+    zhihu_data = fetch_zhihu_hot()
+    return render_template("index.html", zhihu = zhihu_data)
 
 
 @main_bp.route("/login", methods=["GET", "POST"])

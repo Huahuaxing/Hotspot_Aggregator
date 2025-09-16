@@ -6,7 +6,6 @@
     </head>
     <body>
         <h1>欢迎来到热点展示平台</h1>
-    
         {% if current_user.is_authenticated %}
             <p>你好，{{  current_user.username }}！</p>
             <a href="{{ url_for('main.logout') }}">退出</a>
@@ -14,5 +13,13 @@
             <a href="{{ url_for('main.login') }}">登录</a>
             <a href="{{ url_for('main.register') }}">注册</a>
         {% endif %}
+    </body>
+    <body>
+        <h1>知乎热榜（Top 10）</h1>
+        <ul>
+            {% for item in zhihu %}
+                <li><a href="{{ item.url }}" target="_blank">{{ item.title }}</a></li>
+            {% endfor %}
+        </ul>
     </body>
 </html>
