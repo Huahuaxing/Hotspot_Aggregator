@@ -1,5 +1,4 @@
 import requests
-import json
 
 def fetch_zhihu_hot():
     url = "https://www.zhihu.com/api/v3/feed/topstory/hot-lists/total"
