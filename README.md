@@ -50,7 +50,7 @@ HotSpider 是一个基于 **Flask + SQLAlchemy + 前端模板** 的热点信息�
 - **后端框架**: Flask
 - **数据库**: SQLAlchemy + SQLite（开发环境） / MySQL（生产环境）
 - **前端**: Jinja2 模板，Bootstrap/Tailwind
-- **爬虫**: requests / BeautifulSoup / API 调用
+- **爬虫**: scrapy / requests / BeautifulSoup / API 调用
 - **任务调度**: APScheduler（定时刷新）
 - **部署**: Gunicorn + Nginx
 
